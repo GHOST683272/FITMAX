@@ -1,7 +1,7 @@
-// FITMAX JS - fruit pop (homepage), booking opens WhatsApp text
+// FITMAX JS - workout pop (homepage), booking opens WhatsApp text
 document.addEventListener('DOMContentLoaded', function() {
   const gameArea = document.getElementById('game-area');
-  const fruits = ['🍎','🍉','🍌','🍇','🥝','🍊','🍍','🍒'];
+  const workouts = ['🏋️‍♂️','🤸‍♀️','💪','🥊','🧘‍♂️','🚴‍♂️','🤾‍♂️','🏃‍♂️'];
 
   if (gameArea) {
     gameArea.addEventListener('click', function(e){
@@ -9,18 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      const fruit = document.createElement('div');
-      fruit.className = 'fruit';
-      fruit.textContent = fruits[Math.floor(Math.random()*fruits.length)];
-      fruit.style.left = (x - 20) + 'px';
-      fruit.style.top = (y - 20) + 'px';
-      gameArea.appendChild(fruit);
+      const icon = document.createElement('div');
+      icon.className = 'fruit';
+      icon.textContent = workouts[Math.floor(Math.random()*workouts.length)];
+      icon.style.left = (x - 20) + 'px';
+      icon.style.top = (y - 20) + 'px';
+      gameArea.appendChild(icon);
 
-      setTimeout(()=> { if (fruit.parentNode) fruit.remove(); }, 1200);
+      setTimeout(()=> { if (icon.parentNode) icon.remove(); }, 1200);
     });
   }
 
-  // Booking form - WhatsApp prefilled message
+  // Booking form - WhatsApp prefilled message (unchanged)
   const bookingForm = document.getElementById('booking-form');
   if (bookingForm) {
     bookingForm.addEventListener('submit', function(ev){
